@@ -46,3 +46,34 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #DDDDDD;
+}
+
+.list-box {
+  background-color: #FFF;
+  border-radius: .25em;
+  margin: 1em auto;
+  padding: 3em;
+  width: 25em;
+}
+
+.list-box input {
+  font-size: 1em;
+  padding: .5em;
+  width: 100%;
+}
+
+.list-box ul li {
+  background-color: #DDDDDD;
+  margin: .25em auto;
+  padding: .5em;
+  width: 100%;
+}
