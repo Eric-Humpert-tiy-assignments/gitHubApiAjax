@@ -4,19 +4,22 @@ if (this.searchList === undefined) this.searchList = {};
 (function(context) {
 
   var input = document.querySelector('#query-box');
-  var query = document.querySelector('#query-box').value;
+
   var ul = document.querySelector('.username-list');
 
 
   function start() {
 
+    var query = document.querySelector('#query-box');
+
     input.addEventListener('keyup', function(evt) {
       if(evt.keyCode === 13) {
         $.ajax('https://api.github.com/search/users?q=' + query.value).done(function(result) {
+          console.log(query.value);
           console.log('get result', result);
           for (var value of result.items) {
             var li = document.createElement('li');
-            li.textContent = value;
+            li.textContent = value.login;
             ul.appendChild(li);
           }
         });
