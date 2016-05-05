@@ -4,7 +4,6 @@ if (this.searchList === undefined) this.searchList = {};
 (function(context) {
 
   var input = document.querySelector('#query-box');
-
   var ul = document.querySelector('.username-list');
 
 
@@ -17,6 +16,8 @@ if (this.searchList === undefined) this.searchList = {};
         $.ajax('https://api.github.com/search/users?q=' + query.value).done(function(result) {
           console.log(query.value);
           console.log('get result', result);
+          input.value = '';
+          ul.innerHTML = '';
           for (var value of result.items) {
             var li = document.createElement('li');
             li.textContent = value.login;
